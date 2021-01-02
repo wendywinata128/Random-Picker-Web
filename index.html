@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Picker</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <i class="fa fa-optin-monster"></i>
+      <h1>Simple Random Picker</h1>
+      <h3 class="choose">Select your type</h3>
+      <div class="types">
+        <div class="type type-1">Random Choice</div>
+        <div class="type type-2">Random Number</div>
+      </div>
+
+      <div class="contents">
+        <div class="content choice">
+          <h3>
+            Enter all of the choices divided by a comma (',').<br />
+            Press enter when you're done
+          </h3>
+          <textarea
+            name="choice"
+            id="choiceText"
+            placeholder="Your choices ..."
+          ></textarea>
+        </div>
+
+        <div class="content number">
+          <h3>
+            Enter the start number, and the end number.<br />Press random when
+            you're done
+          </h3>
+
+          <div class="form-group">
+            <div class="form-control">
+              <input type="text" class="start" placeholder="0" />
+              <label for="start">START</label>
+            </div>
+
+            <div class="form-control">
+              <input type="text" class="end" placeholder="0" />
+              <label for="end">END</label>
+            </div>
+          </div>
+          <button class="buttonRandomNumber">Random</button>
+        </div>
+
+        <div class="tags"></div>
+      </div>
+    </div>
+
+    <div class="dialog">
+      <div class="random-number"></div>
+      <i class="fa fa-window-close"></i>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/3f230db555.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="source.js"></script>
+  </body>
+</html>

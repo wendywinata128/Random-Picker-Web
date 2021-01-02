@@ -1,0 +1,233 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto Mono", sans-serif;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(165, 209, 248);
+  padding: 20px;
+}
+
+.container {
+  text-align: center;
+  width: 500px;
+  max-width: 100%;
+}
+
+.container > h3 {
+  margin: 20px 10px;
+}
+
+.fa-optin-monster {
+  font-size: 64px;
+  transform: rotate(360deg);
+  transition: transform 0.7s ease-in;
+}
+
+.fa-optin-monster.select {
+  font-size: 64px;
+  transform: rotate(0deg);
+}
+
+.types {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.type {
+  background: cornflowerblue;
+  flex-grow: 1;
+  margin: 15px 20px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: 600;
+  background-color: whitesmoke;
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.type.type-1:hover {
+  background-color: rgb(248, 130, 130);
+  transform: scale(1.1);
+}
+
+.type.type-2:hover {
+  background-color: rgb(147, 253, 156);
+  transform: scale(1.1);
+}
+
+.contents {
+  width: 100%;
+  max-height: 0;
+  background-color: white;
+  transition: max-height 0.6s ease-in;
+  border-radius: 10px;
+}
+
+.type.select.type-1 {
+  background-color: rgb(248, 130, 130);
+}
+
+.type.select.type-2 {
+  background-color: rgb(147, 253, 156);
+}
+
+.types.select + .contents {
+  max-height: 1000px;
+  padding: 8px;
+}
+
+.content {
+  height: 0;
+  overflow: hidden;
+  transition: 0.7s ease-out;
+}
+
+textarea {
+  height: 200px;
+  width: 90%;
+  margin: 10px 0 0 0;
+  padding: 10px 0 0 10px;
+  font-size: 18px;
+}
+
+.number .form-group {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.number input {
+  min-width: 70px;
+  max-width: 130px;
+  height: 85px;
+  border: solid black 2px;
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 48px;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.number .form-control {
+  position: relative;
+  min-width: 70px;
+  height: 85px;
+  margin: 20px 30px;
+}
+
+.form-control label {
+  position: absolute;
+  bottom: 0px;
+  width: 130px;
+  left: 0;
+  font-weight: bold;
+  transition: 0.7s ease;
+}
+
+.number input:focus + label {
+  transform: translateY(100%);
+}
+
+.number button {
+  width: 200px;
+  height: 40px;
+  background-color: cornflowerblue;
+  border: 0;
+  box-shadow: 1px 2px 5px rgb(119, 119, 119);
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: white;
+}
+
+button:focus,
+button:active {
+  outline: none;
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+.tags {
+  width: 100%;
+  text-align: start;
+  padding: 10px 25px;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  transition: 0.7s ease-in-out;
+}
+
+.tags span {
+  padding: 10px;
+  background-color: rgb(248, 130, 130);
+  border-radius: 15px;
+  margin: 10px 5px;
+  display: inline-block;
+}
+
+.tags span.highlight {
+  background-color: rgb(119, 119, 119);
+  transform: scale(1.2);
+}
+
+.tags h3 {
+  text-align: center;
+  margin: 20px 5px;
+}
+
+.dialog {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+  visibility: hidden;
+}
+
+.random-number {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.5);
+  font-size: 142px;
+  color: white;
+  opacity: 0;
+  transition: 150ms ease-in;
+}
+
+.random-number.animation {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.dialog.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.fa-window-close {
+  font-size: 65px;
+  color: white;
+  top: 0;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
